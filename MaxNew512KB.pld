@@ -55,8 +55,8 @@ A13.D  = ( ( trig & A0 ) # ( ( !trig ) & A13 ) );
 A14.D  = ( ( trig & A1 ) # ( ( !trig ) & A14 ) );
 A15.D  = ( ( trig & A2 ) # ( ( !trig ) & A15 ) );
 A16.D  = ( ( trig & A3 ) # ( ( !trig ) & A16 ) );
-A17.D  = ( ( trig & A4 ) # ( ( !trig ) & A16 ) );
-A18.D  = ( ( trig & A5 ) # ( ( !trig ) & A16 ) );
+A17.D  = ( ( trig & A4 ) # ( ( !trig ) & A17 ) );
+A18.D  = ( ( trig & A5 ) # ( ( !trig ) & A18 ) );
 
 A13.ar = 'b'0;
 A14.ar = 'b'0;
