@@ -1,6 +1,6 @@
 # MaxPlus
 
-Cartridge project for ATARI XE computers based on ATF22V10C
+Cartridge ReadOnly project for ATARI XE computers based on ATF22V10C
 
 Depending on the version of JED, you can do:
 -  Atarimax 128 KB Flash cartridge
