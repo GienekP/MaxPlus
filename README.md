@@ -6,6 +6,7 @@ Depending on the version of JED, you can do:
 -  Atarimax 128 KB Flash cartridge
 -  MaxFlash 128kB PLUS cartridge
 -  Atarimax 1 MB Flash cartridge (old/new) for 512kB flash memory
+-  JAC512kB cartridge
 
 
 Upgraded Format:
