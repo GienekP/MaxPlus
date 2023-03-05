@@ -1,0 +1,80 @@
+Name     MaxFlash512kB ;
+PartNo   00 ;
+Date     2022-06-28 ;
+Revision 01 ;
+Designer GienekP ;
+Company   ;
+Assembly None ;
+Location  ;
+Device   p22v10;
+
+/* *************** INPUT PINS ******************** */
+PIN 1  = CLK;
+PIN 2  = A7;
+PIN 3  = A6;
+PIN 4  = A5;
+PIN 5  = A4;
+PIN 6  = nS5;
+PIN 7  = RW;
+PIN 8  = A3;
+PIN 9  = A2;
+PIN 10 = A1;
+PIN 11 = A0;
+PIN 13 = PHI2;
+PIN 14 = nCCTL;
+
+/* *************** OUTPUT PINS ******************** */
+PIN 15 = RD5;
+PIN 16 = A18;
+PIN 17 = A16;
+PIN 18 = A15;
+PIN 19 = nCE;
+PIN 20 = A13;
+PIN 21 = A14;
+PIN 22 = A17;
+PIN 23 = nPHI2;
+
+/* ****************** LOGIC *********************** */
+nPHI2  = ( !PHI2 );
+
+nRW    = ( !RW );
+CCTL   = ( !nCCTL );
+
+nCE    = ( nS5 # nRW );
+trig   = ( CCTL );
+ntrig  = ( !trig );
+
+RD5.D  = !( ( trig & A7 ) # ( ntrig & ( !RD5 ) ) );
+RD5.ar = 'b'0;
+RD5.sp = 'b'0;
+RD5.OE = 'b'1;
+
+A13.D  = ( ( trig & A0 ) # ( ntrig & A13 ) );
+A14.D  = ( ( trig & A1 ) # ( ntrig & A14 ) );
+A15.D  = ( ( trig & A2 ) # ( ntrig & A15 ) );
+A16.D  = ( ( trig & A3 ) # ( ntrig & A16 ) );
+A17.D  = ( ( trig & A4 ) # ( ntrig & A17 ) );
+A18.D  = ( ( trig & A5 ) # ( ntrig & A18 ) );
+
+A13.ar = 'b'0;
+A14.ar = 'b'0;
+A15.ar = 'b'0;
+A16.ar = 'b'0;
+A17.ar = 'b'0;
+A18.ar = 'b'0;
+
+A13.sp = 'b'0;
+A14.sp = 'b'0;
+A15.sp = 'b'0;
+A16.sp = 'b'0;
+A17.sp = 'b'0;
+A18.sp = 'b'0;
+
+A13.OE = 'b'1;
+A14.OE = 'b'1;
+A15.OE = 'b'1;
+A16.OE = 'b'1;
+A17.OE = 'b'1;
+A18.OE = 'b'1;
+
+
