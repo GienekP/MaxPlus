@@ -1,7 +1,7 @@
 Name     MaxFlash128kBplus ;
 PartNo   00 ;
-Date     2022-08-14 ;
-Revision 01 ;
+Date     2023-05-19 ;
+Revision 02 ;
 Designer GienekP ;
 Company   ;
 Assembly None ;
@@ -35,7 +35,7 @@ PIN 22 = A17;
 PIN 23 = nPHI2;
 
 /* ****************** LOGIC *********************** */
-nPHI2  = ( !PHI2 );
+nPHI2  = ( PHI2 );
 
 nRW    = ( !RW );
 CCTL   = ( !nCCTL );
@@ -82,5 +82,3 @@ A15.OE = 'b'1;
 A16.OE = 'b'1;
 A17.OE = 'b'1;
 A18.OE = 'b'1;
-
-
