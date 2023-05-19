@@ -1,7 +1,7 @@
 Name     MaxFlash128kB ;
 PartNo   00 ;
-Date     2022-06-28 ;
-Revision 01 ;
+Date     2023-05-19 ;
+Revision 02 ;
 Designer GienekP ;
 Company   ;
 Assembly None ;
@@ -35,16 +35,11 @@ PIN 22 = A17;
 PIN 23 = nPHI2;
 
 /* ****************** LOGIC *********************** */
-nPHI2  = ( !PHI2 );
+nPHI2  = ( PHI2 );
 
-nRW    = ( !RW );
-CCTL   = ( !nCCTL );
-nA4    = ( !A4 );
-A      = ( !A5 ) & ( !A6 ) & ( !A7 );
-
-nCE    = ( nS5 # nRW );
-trig   = ( A & CCTL);
-ntrig  = !trig;
+nCE    = ( nS5 # ( !RW ) );
+ntrig  = ( ( A5 # A6 ) # ( A7 # nCCTL ) );
+trig   = !ntrig;
 
 RD5.D  = !( ( trig & A4 ) # ( ( !trig ) & ( !RD5 ) ) );
 RD5.ar = 'b'0;
@@ -55,28 +50,20 @@ A13.D  = ( ( trig & A0 ) # ( ( !trig ) & A13 ) );
 A14.D  = ( ( trig & A1 ) # ( ( !trig ) & A14 ) );
 A15.D  = ( ( trig & A2 ) # ( ( !trig ) & A15 ) );
 A16.D  = ( ( trig & A3 ) # ( ( !trig ) & A16 ) );
-A17.D  = 'b'0;
-A18.D  = 'b'0;
+A17  = 'b'0;
+A18  = 'b'0;
 
 A13.ar = 'b'0;
 A14.ar = 'b'0;
 A15.ar = 'b'0;
 A16.ar = 'b'0;
-A17.ar = 'b'0;
-A18.ar = 'b'0;
 
 A13.sp = 'b'0;
 A14.sp = 'b'0;
 A15.sp = 'b'0;
 A16.sp = 'b'0;
-A17.sp = 'b'0;
-A18.sp = 'b'0;
 
 A13.OE = 'b'1;
 A14.OE = 'b'1;
 A15.OE = 'b'1;
 A16.OE = 'b'1;
-A17.OE = 'b'1;
-A18.OE = 'b'1;
-
-
