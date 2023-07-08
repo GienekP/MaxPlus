@@ -7,10 +7,6 @@ Depending on the version of JED, you can do:
 -  Atarimax 1 MB Flash cartridge (new) for 512kB flash memory
 -  JAC128kB, JAC256kB, JAC512kB cartridge
 
-PCB board you can find here:
-https://www.pcbway.com/project/shareproject/MaxFlash_128kB_PLUS_b924602e.html
-
-
 SST39SF010A - 128kB
 
 SST39SF020A - 256kB
